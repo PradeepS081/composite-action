@@ -13,6 +13,8 @@ runs:
 
     - name: Print greeting
       run: echo "Hello ${{ inputs.name }}!"
+      shell: bash
 
     - name: List files in the repository
       run: ls -la
+      shell: bash
