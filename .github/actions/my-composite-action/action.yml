@@ -17,7 +17,9 @@ runs:
 
     - name: Run a script
       run: echo "Hello, ${{ inputs.example-input }}"
+      shell: bash
 
     - name: Set output
       id: set-output
       run: echo "::set-output name=example-output::Hello World"
+      shell: bash
