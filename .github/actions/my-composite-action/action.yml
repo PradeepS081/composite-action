@@ -1,0 +1,23 @@
+# .github/actions/my-composite-action/action.yml
+name: 'My Composite Action'
+description: 'A composite action that combines multiple steps'
+inputs:
+  example-input:
+    description: 'An example input'
+    required: true
+    default: 'default value'
+outputs:
+  example-output:
+    description: 'An example output'
+runs:
+  using: 'composite'
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Run a script
+      run: echo "Hello, ${{ inputs.example-input }}"
+
+    - name: Set output
+      id: set-output
+      run: echo "::set-output name=example-output::Hello World"
