@@ -19,6 +19,14 @@ runs:
       run: echo "Hello, ${{ inputs.example-input }}"
       shell: bash
 
+    - name: Print script file content
+      run: cat script.sh
+      shell: bash
+
+    - name: Execute script file
+      run: bash script.sh
+      shell: bash
+
     - name: Set output
       id: set-output
       run: echo "::set-output name=example-output::Hello World"
