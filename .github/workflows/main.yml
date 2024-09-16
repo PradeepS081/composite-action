@@ -1,16 +1,15 @@
-name: CI
-
+# .github/workflows/main.yml
+name: 'Main Workflow'
 on: [push]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Run my composite action
-      uses: ./
-      with:
-        name: 'GitHub Actions'
+      - name: Use composite action
+        uses: ./.github/actions/my-composite-action
+        with:
+          example-input: 'GitHub Actions'
